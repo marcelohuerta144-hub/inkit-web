@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0877d1">
+<title>INKIT | Hidrátate diferente</title>
+<meta name="description" content="INKIT, agua gasificada con electrolitos y sabor Cherry.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --azul: #0877d1;
+  --azul-oscuro: #064b91;
+  --verde: #23964a;
+  --verde-oscuro: #176a3a;
+  --celeste: #e5f8ff;
+  --menta: #eaf9ee;
+  --oscuro: #103247;
+  --gris: #607684;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--oscuro);
+  background: white;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+.contenedor {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+section {
+  padding: 80px 0;
+  scroll-margin-top: 100px;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.2;
+}
+
+p { line-height: 1.8; }
+
+.azul { color: var(--azul); }
+.verde { color: var(--verde); }
+
+.etiqueta {
+  color: var(--verde);
+  font-size: .85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.titulo {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 45px;
+}
+
+.titulo p {
+  color: var(--gris);
+  margin-top: 15px;
+}
+
+.boton {
+  display: inline-block;
+  padding: 15px 27px;
+  border-radius: 35px;
+  font-weight: 700;
+  margin: 8px 8px 8px 0;
+  transition: .3s;
+}
+
+.boton:hover { transform: translateY(-4px); }
+
+.boton-azul {
+  background: var(--azul);
+  color: white;
+}
+
+.boton-verde {
+  background: var(--verde);
+  color: white;
+}
+
+/* NAVEGACIÓN */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffffef;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 20px #0877d115;
+}
+
+nav {
+  min-height: 85px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--azul);
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: -2px;
+}
+
+.logo span { color: var(--verde); }
+
+.menu {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+.menu a:hover { color: var(--verde); }
+
+/* INICIO */
+
+.inicio {
+  background: linear-gradient(
+    135deg,
+    #e5f8ff,
+    white,
+    #eaf9ee
+  );
+}
+
+.dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.inicio h1 {
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 1.12;
+  letter-spacing: -3px;
+}
+
+.inicio p,
+.texto-producto p {
+  color: var(--gris);
+  margin: 25px 0;
+}
+
+.imagen-marco {
+  background: linear-gradient(135deg, #b4efff, #d7f8df);
+  padding: 20px;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px #0877d120;
+}
+
+.imagen-marco img {
+  width: 100%;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+/* TARJETAS */
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.tarjeta {
+  background: white;
+  padding: 35px 28px;
+  border: 1px solid #d5ebf3;
+  border-radius: 25px;
+  transition: .3s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px #0877d115;
+}
+
+.tarjeta h3 { margin-bottom: 12px; }
+
+.tarjeta p {
+  color: var(--gris);
+  font-size: .92rem;
+}
+
+.icono {
+  font-size: 2rem;
+  background: var(--celeste);
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* PRODUCTO */
+
+.producto { background: var(--celeste); }
+
+.lista {
+  list-style: none;
+  margin: 25px 0;
+}
+
+.lista li {
+  padding: 10px 0;
+  font-weight: 600;
+}
+
+.lista li::before {
+  content: "✓ ";
+  color: var(--verde);
+  font-weight: 900;
+}
+
+/* DIFERENCIA */
+
+.diferencia {
+  background: linear-gradient(
+    135deg,
+    var(--azul-oscuro),
+    var(--verde)
+  );
+  color: white;
+}
+
+.diferencia .etiqueta { color: #c4f9d1; }
+.diferencia .titulo p { color: #e1f5ff; }
+
+.diferencia .tarjeta {
+  background: #ffffff15;
+  border: 1px solid #ffffff35;
+}
+
+.diferencia .tarjeta p { color: #e1f5ff; }
+.diferencia .icono { background: #ffffff25; }
+
+/* PÚBLICO */
+
+.publico-caja {
+  background: var(--menta);
+  padding: 40px;
+  border-radius: 30px;
+}
+
+.publico-caja p {
+  color: var(--gris);
+  margin: 15px 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag {
+  background: white;
+  border: 1px solid #b7e7c8;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: .82rem;
+}
+
+/* HISTORIA */
+
+.historia { background: #f5fcff; }
+
+.historia p {
+  color: var(--gris);
+  margin-top: 18px;
+}
+
+.equipo {
+  background: white;
+  border: 2px solid #b7e7c8;
+  border-radius: 25px;
+  padding: 35px;
+}
+
+.equipo p { margin: 12px 0; }
+
+/* ORGANIGRAMA */
+
+.gente { background: var(--celeste); }
+
+.organigrama {
+  background: white;
+  border: 3px solid var(--azul);
+  border-radius: 25px;
+  padding: 15px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.organigrama iframe {
+  width: 100%;
+  height: 650px;
+  border: 0;
+  border-radius: 15px;
+}
+
+/* NEGOCIO */
+
+.negocio .tarjeta {
+  border-top: 5px solid var(--verde);
+}
+
+/* FLYER */
+
+.flyer { background: var(--menta); }
+
+.flyer-imagen {
+  max-width: 750px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 20px 50px #0877d120;
+}
+
+.flyer-imagen img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+}
+
+/* CONTACTO */
+
+.contacto {
+  background: linear-gradient(
+    135deg,
+    var(--celeste),
+    var(--menta)
+  );
+}
+
+.contacto-caja {
+  max-width: 850px;
+  margin: auto;
+  padding: 55px;
+  border-radius: 35px;
+  background: white;
+  text-align: center;
+  box-shadow: 0 20px 50px #0877d115;
+}
+
+.contacto-caja p {
+  color: var(--gris);
+  margin: 20px 0;
+}
+
+.telefono {
+  display: block;
+  color: var(--azul);
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin: 20px 0;
+}
+
+/* FOOTER */
+
+footer {
+  background: #083b61;
+  color: white;
+  padding: 50px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+}
+
+footer .logo { color: #79d5ff; }
+footer .logo span { color: #85e5a0; }
+
+footer p {
+  color: #d8ecf5;
+  margin-top: 12px;
+  font-size: .9rem;
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid #ffffff30;
+  padding-top: 25px;
+  margin-top: 35px;
+  color: #d8ecf5;
+}
+
+/* CELULARES */
+
+@media(max-width:850px) {
+  nav {
+    flex-direction: column;
+    padding: 15px 0;
+  }
+
+  .menu {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .dos-columnas,
+  .tarjetas,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  section { padding: 60px 0; }
+  .organigrama iframe { height: 450px; }
+  .contacto-caja { padding: 30px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MENÚ -->
+
+<header>
+<nav class="contenedor">
+  <a href="#inicio" class="logo">INK<span>IT</span></a>
+
+  <div class="menu">
+    <a href="#producto">Producto</a>
+    <a href="#beneficios">Beneficios</a>
+    <a href="#nosotros">Nosotros</a>
+    <a href="#gente">Conoce al equipo</a>
+    <a href="#flyer">Flyer</a>
+    <a href="#contacto">Contacto</a>
+  </div>
+</nav>
+</header>
+
+<main>
+
+<!-- PORTADA -->
+
+<section class="inicio" id="inicio">
+<div class="contenedor dos-columnas">
+
+  <div>
+    <span class="etiqueta">
+      AGUA GASIFICADA + ELECTROLITOS
+    </span>
+
+    <h1>
+      Hidrátate<br>
+      <span class="azul">diferente.</span><br>
+      <span class="verde">Vive INKIT.</span>
+    </h1>
+
+    <p>
+      INKIT combina agua gasificada,
+      electrolitos y un refrescante sabor
+      Cherry en una bebida con personalidad propia.
+    </p>
+
+    <a href="#producto" class="boton boton-azul">
+      Descubre INKIT
+    </a>
+
+    <a href="#flyer" class="boton boton-verde">
+      Ver flyer oficial
+    </a>
+  </div>
+
+  <div class="imagen-marco">
+    <img
+      src="Sparking Cherry Hydration Advertisement.png"
+      alt="INKIT Cherry"
+    >
+  </div>
+
+</div>
+</section>
+
+<!-- BENEFICIOS -->
+
+<section id="beneficios">
+<div class="contenedor">
+
+  <div class="titulo">
+    <span class="etiqueta">Nuestra esencia</span>
+    <h2>
+      Frescura que
+      <span class="azul">se siente.</span>
+    </h2>
+    <p>Una bebida diferente para disfrutar cada momento.</p>
+  </div>
+
+  <div class="tarjetas">
+
+    <article class="tarjeta">
+      <div class="icono">💧</div>
+      <h3>Con electrolitos</h3>
+      <p>INKIT incorpora electrolitos a su propuesta de bebida.</p>
+    </article>
+
+    <article class="tarjeta">
+      <div class="icono">🫧</div>
+      <h3>Agua gasificada</h3>
+      <p>Disfruta la sensación refrescante de las burbujas.</p>
+    </article>
+
+    <article class="tarjeta">
+      <div class="icono">🍒</div>
+      <h3>Sabor Cherry</h3>
+      <p>Un sabor frutal y fresco que identifica a INKIT.</p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- PRODUCTO -->
+
+<section class="producto" id="producto">
+<div class="contenedor dos-columnas">
+
+  <div class="imagen-marco">
+    <img
+      src="Sparking Cherry Hydration Advertisement.png"
+      alt="INKIT sabor Cherry"
+    >
+  </div>
+
+  <div class="texto-producto">
+    <span class="etiqueta">Nuestro producto</span>
+
+    <h2>
+      Una bebida con
+      <span class="verde">un twist.</span>
+    </h2>
+
+    <p>
+      INKIT es una propuesta de agua gasificada
+      con electrolitos y sabor Cherry,
+      creada para ofrecer una experiencia
+      refrescante y diferente.
+    </p>
+
+    <ul class="lista">
+      <li>Agua gasificada</li>
+      <li>Con electrolitos</li>
+      <li>Sabor Cherry</li>
+      <li>Presentación de 355 mL</li>
+      <li>Identidad moderna azul y verde</li>
+    </ul>
+
+    <a href="#contacto" class="boton boton-verde">
+      Conoce más
+    </a>
+  </div>
+
+</div>
+</section>
+
+<!-- DIFERENCIACIÓN -->
+
+<section class="diferencia" id="diferencia">
+<div class="contenedor">
+
+  <div class="titulo">
+    <span class="etiqueta">Lo que nos distingue</span>
+    <h2>¿Por qué INKIT?</h2>
+    <p>Una combinación refrescante con identidad propia.</p>
+  </div>
+
+  <div class="tarjetas">
+
+    <article class="tarjeta">
+      <div class="icono">💦</div>
+      <h3>Burbujas + electrolitos</h3>
+      <p>Agua gasificada y electrolitos en una sola bebida.</p>
+    </article>
+
+    <article class="tarjeta">
+      <div class="icono">🍒</div>
+      <h3>Identidad Cherry</h3>
+      <p>Un sabor frutal y reconocible.</p>
+    </article>
+
+    <article class="tarjeta">
+      <div class="icono">✨</div>
+      <h3>Marca moderna</h3>
+      <p>Una identidad juvenil con colores azul y verde.</p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- PÚBLICO -->
+
+<section id="publico">
+<div class="contenedor dos-columnas">
+
+  <div>
+    <span class="etiqueta">Nuestro público</span>
+
+    <h2>
+      Para cualquier
+      <span class="azul">plan.</span>
+    </h2>
+
+    <p style="color:#607684;margin-top:20px">
+      INKIT está dirigida a jóvenes y adultos
+      que disfrutan las bebidas refrescantes
+      y buscan probar algo diferente.
+    </p>
+  </div>
+
+  <div class="publico-caja">
+    <h3>¿Para quién es INKIT?</h3>
+    <p>Una bebida para distintos momentos cotidianos.</p>
+
+    <div class="tags">
+      <span class="tag">🎓 Estudiantes</span>
+      <span class="tag">🏋️ Personas activas</span>
+      <span class="tag">💼 Jóvenes adultos</span>
+      <span class="tag">🍒 Amantes del Cherry</span>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- HISTORIA Y EQUIPO -->
+
+<section class="historia" id="nosotros">
+<div class="contenedor dos-columnas">
+
+  <div>
+    <span class="etiqueta">Nuestra historia</span>
+
+    <h2>
+      Así nace
+      <span class="azul">INKIT.</span>
+    </h2>
+
+    <p>
+      INKIT nace como un proyecto de
+      emprendimiento estudiantil con la
+      idea de desarrollar una bebida diferente.
+    </p>
+
+    <p>
+      Nuestro objetivo es combinar agua gasificada,
+      electrolitos y sabor Cherry en una
+      marca moderna con identidad propia.
+    </p>
+  </div>
+
+  <div class="equipo">
+    <span class="etiqueta">Nuestro equipo</span>
+
+    <h3>Las personas detrás de INKIT</h3>
+
+    <p><strong>Director general:</strong> Marcelo Huerta</p>
+    <p><strong>Gerencia Finanzas:</strong> Nicolas Fernandez</p>
+    <p><strong>Recursos Humanos:</strong> Lorea Lazaro</p>
+    <p><strong>Marketing:</strong> Pia Montemayor</p>
+
+    <a href="#gente" class="boton boton-azul">
+      Ver organigrama completo
+    </a>
+  </div>
+
+</div>
+</section>
+
+<!-- CONOCE AL EQUIPO -->
+
+<section class="gente" id="gente">
+<div class="contenedor">
+
+  <div class="titulo">
+    <span class="etiqueta">Nuestro equipo</span>
+
+    <h2>
+      Conoce al
+      <span class="azul">equipo.</span>
+    </h2>
+
+    <p>Las personas que hacen posible INKIT.</p>
+  </div>
+
+  <div class="organigrama">
+
+    <iframe
+      src="Azul y Blanco Corporativo Organigrama Gráfica (1).pdf"
+      title="Organigrama INKIT">
+    </iframe>
+
+    <p style="text-align:center;margin:15px">
+      <a
+        href="Azul y Blanco Corporativo Organigrama Gráfica (1).pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="boton boton-azul">
+        Abrir organigrama completo
+      </a>
+    </p>
+
+  </div>
+</div>
+</section>
+
+<!-- MODELO DE NEGOCIO -->
+
+<section class="negocio" id="modelo">
+<div class="contenedor">
+
+  <div class="titulo">
+    <span class="etiqueta">
+      Nuestra propuesta comercial
+    </span>
+
+    <h2>
+      Nuestro
+      <span class="verde">modelo de negocio.</span>
+    </h2>
+
+    <p>Una propuesta con visión de crecimiento en Monterrey.</p>
+  </div>
+
+  <div class="tarjetas">
+
+    <article class="tarjeta">
+      <h3>01. Producto</h3>
+      <p>INKIT Cherry: agua gasificada con electrolitos.</p>
+    </article>
+
+    <article class="tarjeta">
+      <h3>02. Precio y pago</h3>
+      <p>Precio y métodos de pago por confirmar.</p>
+    </article>
+
+    <article class="tarjeta">
+      <h3>03. Distribución</h3>
+      <p>Mercado inicial: Monterrey, Nuevo León.</p>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- FLYER -->
+
+<section class="flyer" id="flyer">
+<div class="contenedor">
+
+  <div class="titulo">
+    <span class="etiqueta">Campaña INKIT</span>
+
+    <h2>
+      Nuestro
+      <span class="azul">flyer oficial.</span>
+    </h2>
+
+    <p>Hidrátate diferente. Agua con un twist.</p>
+  </div>
+
+  <div class="flyer-imagen">
+    <img
+      src="Sparking Cherry Hydration Advertisement.png"
+      alt="Flyer oficial INKIT Cherry"
+    >
+  </div>
+
+</div>
+</section>
+
+<!-- CONTACTO -->
+
+<section class="contacto" id="contacto">
+<div class="contenedor">
+
+  <div class="contacto-caja">
+    <span class="etiqueta">
+      Estamos para escucharte
+    </span>
+
+    <h2>
+      Hablemos de
+      <span class="azul">INKIT.</span>
+    </h2>
+
+    <p>
+      ¿Quieres saber más sobre INKIT?
+      Contacta directamente al CEO.
+    </p>
+
+    <h3>Marcelo Huerta — CEO</h3>
+
+    <a href="tel:+528129604016" class="telefono">
+      812 960 4016
+    </a>
+
+    <a
+      href="https://wa.me/528129604016?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20INKIT"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="boton boton-verde">
+      💬 Hablar con el CEO por WhatsApp
+    </a>
+
+    <p>Monterrey, Nuevo León, México</p>
+  </div>
+
+</div>
+</section>
+
+</main>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+<div class="contenedor">
+
+  <div class="footer-grid">
+
+    <div>
+      <a href="#inicio" class="logo">
+        INK<span>IT</span>
+      </a>
+
+      <p>Hidrátate diferente.</p>
+      <p>Agua gasificada con electrolitos y sabor Cherry.</p>
+    </div>
+
+    <div>
+      <h3>Contacto y redes</h3>
+
+      <p>CEO: Marcelo Huerta</p>
+      <p>Teléfono: 812 960 4016</p>
+
+      <p>
+        <a
+          href="https://www.instagram.com/ink.itmx/"
+          target="_blank"
+          rel="noopener noreferrer">
+          Instagram: @ink.itmx
+        </a>
+      </p>
+
+      <p><a href="#flyer">Ver flyer oficial</a></p>
+    </div>
+
+  </div>
+
+  <div class="copyright">
+    © <span id="anio"></span>
+    INKIT. Hidrátate diferente.
+  </div>
+
+</div>
+</footer>
+
+<script>
+document.getElementById("anio").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
